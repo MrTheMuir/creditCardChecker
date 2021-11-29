@@ -86,33 +86,35 @@ console.log(findInvalidCards(batch)); // check all cards using the batch array a
 
 const idInvalidCardCompanies = (cards) =>{
     const companies = [];
-    for (let i = 0; i < cards.length; i++) {
-      switch (cards[i][0]) {
-        case 3:
-          if (!~companies.indexOf('Amex')) {
-            companies.push('Amex');
-          }
-          break
-        case 4:
-          if (!~companies.indexOf('Visa')) {
-            companies.push('Visa');
-          }
-          break
-        case 5:
-          if (!~companies.indexOf('Mastercard')) {
-            companies.push('Mastercard');
-          }
-          break
-        case 6:
-          if (!~companies.indexOf('Discover')) {
-            companies.push('Discover');
-          }
-          break
-        default:
-          console.log('Company not found');
+
+      for (let i = 0; i < cards.length; i++) {
+        switch (cards[i][0]) {
+          case 3:
+            if (!~companies.indexOf('Amex')) {
+              companies.push('Amex');
+            }
+            break
+          case 4:
+            if (!~companies.indexOf('Visa')) {
+              companies.push('Visa');
+            }
+            break
+          case 5:
+            if (!~companies.indexOf('Mastercard')) {
+              companies.push('Mastercard');
+            }
+            break
+          case 6:
+            if (!~companies.indexOf('Discover')) {
+              companies.push('Discover');
+            }
+            break
+          default:
+            console.log('Company not found');
+        }
       }
-    }
-    return companies;
+      return companies;
+
 }
 
 
@@ -120,9 +122,11 @@ console.log(idInvalidCardCompanies([invalid1])); // Should print['visa']
 console.log(idInvalidCardCompanies([invalid2])); // Should print ['mastercard']
 console.log(idInvalidCardCompanies(batch)); // Find out which companies have mailed out invalid cards
 
-
-
-
-
+const convertToArrayOfNumbers = (arr) => {
+  let a = arr.split('');// make string into array
+  let b = a.map(Number);// pass number to map to turn into numbers
+  return b.filter(value => !Number.isNaN(value)); // return numbers 
+}
+console.log(convertToArrayOfNumbers('39487623984576dsjhfgakjhsdgf')) 
 
 
