@@ -59,7 +59,6 @@ console.log(validateCred(mystery3)); // Should print false
 console.log(validateCred(valid1) ? 'this card is valid':'this card is invalid'); // Should print valid
 console.log(validateCred(mystery3) ? 'this card is valid':'this card is invalid'); // Should print invalid
 
-
 const findInvalidCards = (cards) => {
   const invalids = [];
   for(let i = 0; i < cards.length; i++){
@@ -82,7 +81,6 @@ console.log('mystery');
 console.log(findInvalidCards(mysteryBatch)); // only mystery 
 console.log('all')
 console.log(findInvalidCards(batch)); // check all cards using the batch array and return those that are valid
-
 
 const idInvalidCardCompanies = (cards) =>{
     const companies = [];
@@ -117,7 +115,6 @@ const idInvalidCardCompanies = (cards) =>{
 
 }
 
-
 console.log(idInvalidCardCompanies([invalid1])); // Should print['visa']
 console.log(idInvalidCardCompanies([invalid2])); // Should print ['mastercard']
 console.log(idInvalidCardCompanies(batch)); // Find out which companies have mailed out invalid cards
@@ -128,5 +125,3 @@ const convertToArrayOfNumbers = (arr) => {
   return b.filter(value => !Number.isNaN(value)); // return numbers 
 }
 console.log(convertToArrayOfNumbers('39487623984576dsjhfgakjhsdgf')) 
-
-
